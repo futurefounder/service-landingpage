@@ -1,0 +1,666 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>How to Keep Up with Your Team When They&#x27;re On The Other Side of the Globe</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a00f2a58-4087-4c1c-8df7-6f49788cb5f7" class="page sans"><header>
+	
+<h1 class="page-title">How to Keep Up with Your Team When They&#x27;re On The Other Side of the Globe</h1></header><div class="page-body"><p id="76ff5b77-30a7-4849-a9c2-19508d71cd5b" class="">
+</p><h1 id="ed3c54e0-9373-4b2e-afa5-ee15a92021e8" class=""><strong>How to Keep Up with Your Team When They&#x27;re On The Other Side of the Globe</strong></h1><p id="d454ec3c-8365-4c2c-a7ee-56b2424475b8" class="">
+</p><p id="4c72a5f1-709f-4877-bdd7-7f51f36970ba" class="">If you work with a remote team, you know what it&#x27;s like to have a constant communication challenge. </p><p id="d9463b76-62e2-474a-b01b-aaaceecf376a" class="">If you&#x27;re in a global team, it&#x27;s even more difficult. </p><p id="5dcacf7b-7f49-4731-9315-9de9fcd04b1e" class="">No matter how hard you work to stay in touch, it&#x27;s tough to feel like you&#x27;re on the same page. </p><p id="970e7cdb-ca7c-44f8-90b3-742c7ac3f541" class="">As a team leader, what&#x27;s your strategy for managing your remote team? </p><p id="269e2f3e-56d1-46fa-81d0-5941159dd12e" class="">Here are tips for remote teams that we&#x27;ve learned along the way.</p><h2 id="24a7b1fd-d4e1-4b12-975b-5d4dc92f8eba" class="">S<strong>tay in touch with your remote team</strong></h2><p id="0abb4c10-3822-4d47-9c4c-37bcdc3f0327" class="">
+</p><p id="441ddc7a-0443-45fe-9896-ff4084816884" class="">Working remote does not mean losing the line.</p><p id="008dbd28-08af-475f-9922-c57308bb1972" class="">Which is why it is crucial to stay in touch with your team.</p><p id="8f3a863e-0828-45e7-b1c0-9e0508e0dfac" class="">These 4 things we&#x27;ve learned help make remote teams feel like they&#x27;re in the same room as the rest of the team. </p><p id="0c9b0d38-b972-4724-8a5d-6dbb16c111b3" class="">
+</p><p id="bc539891-5394-48b6-80ac-d9e0e040a128" class=""><strong>1. Align your goals </strong></p><p id="6ee236b1-7396-46de-a032-0936bd972cd6" class="">
+</p><p id="55f74a43-1950-413e-911b-58d2e9b1f345" class="">Most remote teams have some shared objectives. </p><p id="bf3f5a5d-8edb-4315-9616-ef16adfb81e3" class="">But unless you do a lot of focused planning, communication issues will arise. </p><p id="b9d18312-e304-4b0f-82de-56fb664c6570" class="">If you talk about things in the abstract, you&#x27;ll end up talking past each other. </p><p id="09f82249-c3a3-4acb-9f5a-5eb8ac5049e8" class="">Communication has to come with a goal in mind. </p><p id="19c136fc-d0ee-4c6f-9ad5-ea88e8ba5576" class="">This helps clarify the purpose of what you&#x27;re communicating, and clarify what needs to be done. </p><p id="66b2e439-3cff-459a-87f4-728667cc4429" class="">By sharing your goals, you&#x27;ll all be in sync when you&#x27;re speaking to each other. </p><p id="11fba2a0-abc0-4263-acf1-cc8e7e5d74b5" class="">
+</p><p id="950d46a6-4794-4bdb-8806-e236d95e1925" class="">If the objective is e.g. to create a new video, you all know what that means. </p><p id="9de872bb-e55c-4057-a61a-d54bbd228fb5" class="">You can find out who has the most experience. </p><p id="a41d00fe-1e24-4919-8a1a-d4deec6e8eef" class="">You can come up with a plan for production. </p><p id="bf58a2bf-6320-482d-b4a1-373db3218c8e" class="">You can negotiate workflows that work for everybody.</p><p id="63bc8b20-2965-4c13-9521-757d2bf27a5d" class="">E.g. by making use of templates, <a href="https://www.notion.so/Video-production-d4dd7cae3ec848b78f70e993fd76011d">like this one from notion</a></p><figure id="9ef993fa-ae24-43c7-8dbe-376f16c2f3b8" class="image"><a href="How%20to%20Keep%20Up%20with%20Your%20Team%20When%20They&#x27;re%20On%20The%20%209ef993faae2443c78dbe376f16c2f3b8/Untitled.png"><img style="width:2000px" src="How%20to%20Keep%20Up%20with%20Your%20Team%20When%20They&#x27;re%20On%20The%20%209ef993faae2443c78dbe376f16c2f3b8/Untitled.png"/></a></figure><p id="8ffc99fd-dc06-40d2-94ed-92cb99dc2d2f" class="">But what if the overall goal is not that clear?</p><p id="f1d9b3f2-210f-45b3-bde9-2d960d3dc9a1" class="">For example, the video &quot;<em>does not feel in line with the target audience</em>&quot; ?</p><p id="36263cba-6dfd-4be5-94a9-907caee30f97" class="">
+Then you have to break the objectives into manageable chunks by tracking your goals.</p><p id="e72af558-ab98-4c7b-a31d-0aec7d960dd7" class="">
+</p><p id="18b6719f-e912-4042-a327-5400e2268a7a" class=""><strong>2. Track your goals</strong></p><p id="bd3b6ac9-e58b-47d4-8a91-65e3aec7faf0" class="">
+</p><p id="f9d84d81-db87-426e-a5be-03932e19c876" class="">A popular method to do this is the &quot;OKR&quot;-Method, or <strong>Objectives and Key Results</strong>, popularized by Google.</p><p id="2a533d58-8129-4c54-aa41-aa726fbf2978" class="">Get started with your OKR-planning with <a href="https://www.notion.so/OKRs-32cf0d3923e545dfbe45e415a675ece1">this notion template</a></p><p id="37f54ffa-cb7c-406c-ac84-0926a02214ba" class="">
+</p><p id="ef7e9400-91dd-47a6-9953-70cdb64d93ca" class=""><strong>3. Show your team you care</strong></p><p id="531731cc-64e6-4c5b-9ebc-2c07574e47bb" class="">
+</p><p id="8bc9734d-49d2-4d87-9549-f54a158d494b" class="">One of the main challenges of not sharing the same work space is that finished work can float away in a sea of not-noticingness.</p><p id="203c9cf6-c9e7-488c-ad16-7a33adbb0067" class="">To prevent this it is very important that the team members know when you appreciate the work they have done.</p><p id="46eba849-fe1a-4090-a9b4-ee6b85c9a427" class="">A simple Gif in a Slack Channel, or an uplifting compliment in the working documents will show your team that you see and care about their work.</p><p id="721de2de-db5d-4db1-af54-d070a3287bc0" class="">
+</p><p id="6346bdef-2f53-4f71-93d1-855f5d42fe5d" class="">&quot;🎉  👍 Great work with the OKR-Planning, Jean!</p><p id="ccb63847-4c46-4336-bbe2-08194505d309" class="">
+</p><p id="d6ed0d6a-f4ee-4097-bedc-34723f7ee833" class=""><strong>4. Talk about things not related to work</strong></p><p id="b66629a6-77b4-47e5-adcc-ca25b2c8ffb5" class="">
+</p><p id="d57c3234-1363-415c-8447-3bd71a02979c" class="">Just as you have casual conversations in the lift, or at the coffee machine about the weather, current sport events, or the newest hot topics from the yellow press talk to your team about things not related to work once in a while.</p><p id="c2a7923f-f557-4823-84aa-2ec72349233d" class="">This lightens up the mood and supports you in getting a feeling of what are topics your team members care about.</p><p id="ccbe667f-1741-4e96-9624-6c091a21fe27" class="">
+</p><p id="4947d0d4-c138-42ef-a0e0-6fc3aed557ac" class="">All these activities might become a burden if you have to do them manually on a day-to-day basis.</p><p id="01bf3015-8d15-4f13-b4dd-14963c174f21" class="">That is why you can make your life much easier by letting apps and tools take over some painful tasks.</p><h2 id="4d925f3e-4c64-4775-8667-d9bc2ad3dc01" class="">How tools can help you</h2><p id="3d782da0-dfe7-4271-b2e2-e1a0883950f3" class="">
+</p><p id="03c491d6-03b3-4538-b8ca-2f02c0d5595f" class="">We have selected 5 tools for you which will help you engage with your team with ease.</p><p id="be0b1a69-55ca-4d52-b39f-0a0e3945fabe" class="">
+</p><p id="510aa2b1-6ebb-44dd-bc17-e0cec1c52e61" class=""><strong>1. Gatheraround</strong></p><p id="90c9e31f-85d1-4caf-9334-aaecae0a108a" class="">
+</p><p id="81ac84a2-e615-482b-a86d-41a06076e69d" class="">Gatheraround is <strong>a community building web service</strong>.  </p><p id="41726496-551f-4e6d-a92d-794a07f65bfc" class="">Their mission is helping communities, companies, and teams feel a sense of togetherness and belonging, no matter where their people are.</p><p id="ad214786-0158-42bd-a6cc-037174b553a6" class="">
+</p><p id="c90268f6-54bf-4b66-a7de-712737401b42" class="">Find it at <a href="https://gatheround.com/">Gatheraround</a></p><p id="8836da5d-2e21-435a-840d-4c5e9b768bfa" class="">
+</p><p id="36c83e18-8318-4ff6-abd6-8e2bfe59b25e" class=""><strong>2. Crowd Party</strong></p><p id="347a964f-3768-43c9-b791-d29d5ff8f6dd" class="">
+</p><p id="02f2a983-e72d-4c88-8bd2-a6dc7d57fa82" class="">Are your Zoom meetings so boring, that the participants are falling asleep?</p><p id="ca9d7315-7a15-48d1-bd8e-f679c16dd668" class="">&quot;Crowd Party App&quot; is a website to play curated games over video calls, no registration required.</p><p id="ce92f829-3eb9-4afb-a964-6efbdcd30208" class="">
+</p><p id="bfcdfab2-5388-4df1-b4ce-735b867ab4cc" class="">Find it at <a href="https://crowdparty.app/">Crowd Party</a></p><p id="faae9a3a-2f55-4ddc-b9a2-9e65fdd97d0b" class="">
+</p><p id="d7cd31cb-b6cc-47e3-a1f2-2cd6b04b5d7f" class=""><strong>3. Focus Mate</strong></p><p id="c16ea83c-cec1-46ed-9dcd-d851adb4cd65" class="">
+</p><p id="32109378-a6e7-4d2f-919b-de6f3b43a112" class="">Stay productive and accountable with the help of a virtual team working session.</p><p id="97ad1a66-069b-4296-97e0-5ab03a58f783" class="">Focus Mate helps you connect with a team member and boost productivity by cracking on tasks side-by-side.</p><p id="f417a812-1b4a-4652-ada2-6de8bf9a98ce" class="">
+</p><p id="bc92285d-89b6-4744-8a65-dbc5ff743fbb" class="">Find it at <a href="https://www.focusmate.com/">Focus Mate</a></p><p id="14134fc9-1739-43e3-851d-a0237c57c9ba" class="">
+</p><p id="352a9e70-6f78-48b0-bf7e-648876394902" class=""><strong>4. Tandem</strong></p><p id="fa83d574-ad1a-47fa-be87-f8ade9e543d2" class="">
+</p><p id="6c3344f8-756a-44c1-908a-b350ae40df83" class="">Talking about virtual co-working: how about opening up a whole digital working space?</p><p id="f7f7b353-c456-46a8-8a2b-da7158193041" class="">You can do just that with the help of Tandem Chat, which lets you connect effortlessly with your distributed team.</p><p id="d9c9b394-c834-4a30-9fa1-2d6c11d7354d" class="">
+</p><p id="42476ea0-92f9-4b6c-a842-b50ebd2f6783" class="">Find it at <a href="https://tandem.chat/">Tandem Chat</a></p><p id="85852586-8faf-41cf-87f1-c2c611ddb2e4" class="">
+</p><p id="7e3af151-805d-4d75-8aca-b4542054d4d5" class=""><strong>5. Hallway</strong></p><p id="11658910-86e8-4511-b017-c85bc39c42e8" class="">
+</p><p id="22483231-4765-4459-ad43-1664ef717149" class="">Let the app Hallway take care of your spontaneous water cooler chats. No more Excel sheets and meeting coordination, just install it for slack or Microsoft Teams.</p><p id="49b35d94-ab6f-4360-956a-0e8f5b524c17" class="">
+</p><p id="786c2a15-a1fb-4876-b6e7-99ba4ca95a5b" class="">Find it at <a href="https://hallway.chat/">Hallway</a></p><h2 id="e66356a8-bcab-4186-ba13-92b8a8a3476f" class=""><strong>Related Resources</strong></h2><p id="c6bc15da-217b-4224-bf75-5cf3cfe58752" class="">
+</p><ul id="900c1117-5b5b-45b9-ac75-724655c16e3e" class="bulleted-list"><li>Google OKR <a href="https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/">https://rework.withgoogle.com/guides/set-goals-with-okrs/steps/introduction/</a></li></ul><ul id="e23f6839-0750-42a3-95dd-e54181d226c4" class="bulleted-list"><li>Notion Tips for remote teams <a href="https://www.notion.so/Notion-tips-for-remote-teams-95f92175c8bd41ad8610432f0f952556">https://www.notion.so/Notion-tips-for-remote-teams-95f92175c8bd41ad8610432f0f952556</a></li></ul><h2 id="5475b104-cf74-42b8-8e76-b837f19669bc" class=""><strong>Conclusion</strong></h2><p id="10091cad-1da1-4537-9f2f-bb6eab7e0cda" class="">
+</p><p id="df037504-6d38-47e2-a3fe-6b2c64b3f9a7" class="">We&#x27;ve covered a lot of ground in this article.</p><p id="0b626e28-0652-415d-9d4a-5b8b8272cc9b" class="">As a team leader you have to make sure everyone on the team is on the same page. </p><p id="7e804d5c-368e-4eea-bf61-7bc0dee117d2" class="">Whether they are at the office, at home, or at the beach house drinking a cocktail.</p><p id="48f31430-0321-471c-aac7-746ed8ebfd2d" class="">By aligning your goals and showing your team that you care about them, you will boost morale and give everyone the motivation and attention they need to fulfil their tasks to the best potential.</p><p id="86c66ea3-29ee-43d1-bc36-2a29882b53cc" class="">Use web tools and apps so that you do not waste too much time with repetitive tasks</p><p id="1e7ca7f6-6a31-41c9-88f9-501c90e5e220" class="">I hope you&#x27;ve enjoyed reading this article. </p><p id="2ba36c7f-762c-4eff-8da1-f6fb2136b807" class="">
+</p><p id="75b09ece-1924-42a2-b59a-968cc00fc2d3" class="">What&#x27;s your experience working with a remote team? </p><p id="d1a0f848-b703-4fbe-9386-73af36882abf" class="">What challenges have you encountered? </p><p id="c6715a81-15ac-43f0-bf43-04827808d7c3" class="">Did you find these tips helpful? </p><p id="57db8f20-9cba-48f0-8e3e-5f67fc879cf9" class="">Do you have a question about remote working? </p><p id="ca16df23-b93b-400c-8908-402f24314aab" class="">If you have questions, do not hesitate <a href="http://remotenactive.com/en/contact.html">to reach out! </a></p><p id="ae9f24d2-5cf6-4b6a-8bcc-8f4427f4ce05" class="">Best of luck! </p><p id="3a204e4a-5065-472c-97e6-43e2315534e5" class="">
+</p></div></article>
+</body></html>
